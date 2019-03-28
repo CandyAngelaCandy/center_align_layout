@@ -4,31 +4,32 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style type="text/css">
+        /*问题：若body宽和高大于root元素，则root元素的内容不在可视区域*/
         html {
+            min-height: 768px;
             height: 100%;
         }
 
         body {
             margin: 0;
             height: 100%;
-            width: 100%;
             background-color: pink;
-            display: table;
+            position: relative;
         }
 
-        /*若table只有一个元素，元素已有宽度失效，与父元素一样。可垂直居中*/
         .root {
-            display: table-cell;
-            vertical-align: middle;
             width: 1366px;
             height: 768px;
             background-color: aqua;
-            margin:0  auto;
-            font-size: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
+
     </style>
 </head>
 <body>
-<div class="root">first line</div>
+<div class="root">first line--------</div>
 </body>
 </html>

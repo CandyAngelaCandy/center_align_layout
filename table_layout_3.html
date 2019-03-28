@@ -16,19 +16,26 @@
             display: table;
         }
 
-        /*若table只有一个元素，元素已有宽度失效，与父元素一样。可垂直居中*/
+        /*问题：子元素与父元素的高度一样，自己的高度失效，min-height: 768px;不生效*/
         .root {
-            display: table-cell;
-            vertical-align: middle;
             width: 1366px;
             height: 768px;
             background-color: aqua;
-            margin:0  auto;
+            margin: 0 auto;
             font-size: 50px;
         }
+
+        .root, .test {
+            display: table-cell;
+            vertical-align: middle;
+            min-height: 768px;
+        }
+
     </style>
 </head>
 <body>
+<div class="test"></div>
 <div class="root">first line</div>
+<div class="test"></div>
 </body>
 </html>
